@@ -449,7 +449,7 @@
   }
   .about-grid{
     display:grid;
-    grid-template-columns:0.9fr 1.1fr;
+    grid-template-columns:1.15fr 0.85fr;
     gap:70px;
     align-items:center;
   }
@@ -458,7 +458,7 @@
     overflow:hidden;
     aspect-ratio:4/5;
   }
-  .about-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+  .about-img img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .6s ease;}
   .about-img:hover img{transform:scale(1.05);}
   .about h2{font-size:clamp(32px,3.8vw,48px);margin-bottom:22px;line-height:1.18;}
   .about p.lead{font-size:19px;color:var(--text-soft);margin-bottom:34px;max-width:520px;}
@@ -872,7 +872,7 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:22px;
+    font-size:30px;
     line-height:1;
     color:var(--brown);
     transition:all .25s;
@@ -1185,7 +1185,7 @@
 
     /* ── About ── */
     .about{padding:50px 0 70px;}
-    .about-img{aspect-ratio:4/3;max-height:280px;}
+    .about-img{aspect-ratio:3/2;max-height:320px;margin:0 auto;}
     .about h2{font-size:clamp(26px,7vw,36px);margin-bottom:16px;}
     .about p.lead{font-size:16px;margin-bottom:22px;}
     .years-badge .bracket{font-size:40px;}
@@ -1295,7 +1295,7 @@
     }
     .faq h2{font-size:clamp(26px,7.5vw,38px);}
     .faq-q{font-size:20px;padding:22px 0;gap:14px;}
-    .faq-q .icon{width:44px;height:44px;font-size:20px;line-height:1;flex-shrink:0;}
+    .faq-q .icon{width:44px;height:44px;font-size:26px;line-height:1;flex-shrink:0;}
     .faq-a p{font-size:15px;padding-bottom:20px;}
 
     /* ── Contact ── */
@@ -1380,11 +1380,11 @@
     <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
   </div>
   <nav class="mobile-menu-nav">
-    <a href="#about">О мастере</a>
-    <a href="#services">Услуги</a>
-    <a href="#gallery">Галерея</a>
-    <a href="#process">Этапы</a>
-    <a href="#contact">Контакты</a>
+    <a href="#about" data-i18n="nav.about">О мастере</a>
+    <a href="#services" data-i18n="nav.services">Услуги</a>
+    <a href="#gallery" data-i18n="nav.gallery">Галерея</a>
+    <a href="#process" data-i18n="nav.process">Этапы</a>
+    <a href="#contact" data-i18n="nav.contact">Контакты</a>
   </nav>
   <div class="mobile-menu-bottom">
     <div class="lang-switch">
@@ -1628,7 +1628,7 @@
       <button class="filter-btn" data-filter="фасады" data-i18n="filter.фасады">Фасады</button>
       <button class="filter-btn" data-filter="интерьер" data-i18n="filter.интерьер">Интерьер</button>
     </div>
-    <div class="gallery-grid reveal" id="galleryGrid"></div>
+    <div class="gallery-grid" id="galleryGrid"></div>
     <div class="gallery-more reveal">
       <a href="#contact" class="btn-secondary" data-i18n="gallery.discuss">Обсудить ваш проект</a>
     </div>
@@ -1971,26 +1971,10 @@ const galleryData = [
       div.className = 'gallery-item';
       const num = String(idx+1).padStart(2,'0');
       const total = String(currentList.length).padStart(2,'0');
-      const loadAttr = idx < 6 ? 'loading="eager"' : 'loading="lazy"';
-      div.innerHTML = `<img src="${it.src}" alt="${it.tag}" ${loadAttr}><div class="gallery-info"><span class="gallery-tag" data-i18n="filter.${it.cat}">${it.tag}</span><span class="gallery-index">${num} / ${total}</span></div>`;
+      div.innerHTML = `<img src="${it.src}" alt="${it.tag}" loading="eager" decoding="async"><div class="gallery-info"><span class="gallery-tag" data-i18n="filter.${it.cat}">${it.tag}</span><span class="gallery-index">${num} / ${total}</span></div>`;
       div.addEventListener('click', ()=> openLightbox(idx));
       grid.appendChild(div);
     });
-    
-    // Intersection Observer для предзагрузки картинок
-    if('IntersectionObserver' in window){
-      const imgObserver = new IntersectionObserver((entries, observer)=>{
-        entries.forEach(entry=>{
-          if(entry.isIntersecting){
-            const img = entry.target;
-            img.loading = 'eager';
-            observer.unobserve(img);
-          }
-        });
-      }, {rootMargin: '50px'});
-      
-      grid.querySelectorAll('img').forEach(img=> imgObserver.observe(img));
-    }
   }
   renderGallery('all');
 
