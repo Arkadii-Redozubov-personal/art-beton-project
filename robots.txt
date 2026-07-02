@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://art-concrete.netlify.app/sitemap.xml
