@@ -1,0 +1,45 @@
+backend:
+  name: git-gateway
+  repo: ВАШ_GITHUB_USERNAME/ВАШ_РЕПОЗИТОРИЙ   # например: adstro-media/simakhin-site
+  branch: main                                # или master — как называется основная ветка в репо
+  identity_url: https://auth.decapbridge.com/sites/ВАШ_SITE_ID   # выдаст DecapBridge
+  gateway_url: https://gateway.decapbridge.com
+
+# Изображения при загрузке кладутся в /images, ссылки в JSON — вида "images/файл.jpg"
+media_folder: "images"
+public_folder: "images"
+
+collections:
+  - name: "gallery"
+    label: "Галерея"
+    files:
+      - name: "gallery"
+        label: "Фотографии работ"
+        file: "content/gallery.json"
+        fields:
+          - label: "Работы"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.tag}} — {{fields.src}}"
+            fields:
+              - label: "Фото"
+                name: "src"
+                widget: "image"
+                media_library:
+                  config:
+                    multiple: false
+              - label: "Категория"
+                name: "cat"
+                widget: "select"
+                options:
+                  - { label: "Скалы", value: "скалы" }
+                  - { label: "Скульптуры", value: "скульптуры" }
+                  - { label: "Павильоны", value: "павильоны" }
+                  - { label: "Мебель", value: "мебель" }
+                  - { label: "Печи", value: "печи" }
+                  - { label: "Фонтаны", value: "фонтаны" }
+                  - { label: "Фасады", value: "фасады" }
+                  - { label: "Интерьер", value: "интерьер" }
+              - label: "Подпись (для карточки)"
+                name: "tag"
+                widget: "string"
