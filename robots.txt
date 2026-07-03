@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /admin/
 Allow: /
 
 Sitemap: https://art-concrete.netlify.app/sitemap.xml
