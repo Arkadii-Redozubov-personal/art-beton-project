@@ -641,17 +641,22 @@
   .ba-card-text h3{font-size:24px;margin-bottom:14px;line-height:1.2;}
   .ba-card-text p{font-size:15px;color:var(--text-soft);line-height:1.6;margin-bottom:18px;flex-grow:1;}
   .ba-features{list-style:none;margin-top:auto;}
-  .ba-features li{font-size:14px;color:var(--text-soft);padding:6px 0;padding-left:24px;position:relative;}
+  .ba-features li{font-size:16px;color:var(--text-soft);padding:7px 0;padding-left:30px;position:relative;}
   .ba-features li::before{
-    content:'';
+    content:'✓';
     position:absolute;
     left:0;
-    width:4px;
-    height:4px;
-    background:var(--terracotta);
-    border-radius:50%;
     top:50%;
     transform:translateY(-50%);
+    width:19px;
+    height:19px;
+    line-height:19px;
+    text-align:center;
+    font-size:11px;
+    font-weight:700;
+    color:#fff;
+    background:var(--terracotta);
+    border-radius:50%;
   }
   .ba-card.after .ba-features li::before{background:var(--green);}
   @media(max-width:900px){
@@ -1104,8 +1109,11 @@
     .burger{display:block;}
     /* Grids → single column */
     .hero-grid, .about-grid, .featured-grid, .faq-grid, .contact-grid{grid-template-columns:1fr;}
-    /* Hero images */
-    .hero-images{height:400px;margin-top:30px;}
+    /* Hero images — single image only, more height */
+    .hero-images{height:auto;margin-top:30px;position:relative;padding-bottom:0;}
+    .hero-img-main{position:relative;width:100%;left:auto;right:auto;top:auto;border-radius:16px;}
+    .hero-img-main img{height:480px;}
+    .hero-img-sub{display:none;}
     /* Stats */
     .stats-grid{grid-template-columns:1fr;}
     .stat-cell{border-right:none;border-bottom:1px solid var(--line);}
@@ -1114,13 +1122,32 @@
     .service-row.reverse .service-img, .service-row.reverse .service-text{order:initial;}
     /* Gallery */
     .gallery-grid{grid-template-columns:1fr 1fr;}
-    /* Timeline */
-    .timeline::before{left:14px;}
-    .t-row, .t-row.flip{grid-template-columns:1fr;gap:14px;padding-left:40px;min-height:auto;margin-bottom:50px;}
-    .t-row .t-side, .t-row.flip .t-side{padding:0;text-align:left !important;order:initial !important;}
-    .t-row .t-side.text-side .rule{margin-left:0 !important;}
-    .t-row .dot, .t-row.flip .dot{left:14px;top:6px;transform:translate(-50%,-50%);}
-    .t-row .t-num{font-size:80px;}
+    /* Timeline — stacked single-column layout */
+    .timeline{margin:0;}
+    .timeline::before{display:none;}
+    .t-row, .t-row.flip{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      padding-left:0;
+      margin-bottom:52px;
+      min-height:auto;
+      gap:0;
+      grid-template-columns:unset;
+    }
+    .t-row .dot, .t-row.flip .dot{display:none;}
+    .t-row .t-side, .t-row.flip .t-side{
+      padding:0 !important;
+      text-align:left !important;
+      order:initial !important;
+      width:100%;
+    }
+    .t-row.flip .t-side.text-side{order:2 !important;}
+    .t-row.flip .t-side.num-side{order:1 !important;text-align:left !important;}
+    .t-row .t-num, .t-row.flip .t-num{font-size:76px;line-height:1;color:var(--terracotta-soft);margin-bottom:0;}
+    .t-row .t-side.text-side .rule{margin-left:0 !important;margin-bottom:12px;margin-top:8px;}
+    .t-row .t-side.text-side h4{font-size:26px;margin-bottom:8px;}
+    .t-row .t-side.text-side p{font-size:16px;}
     /* Testimonials */
     .t-grid{grid-template-columns:1fr;}
     /* Contact */
@@ -1158,16 +1185,8 @@
     .hero-cta{flex-direction:column;align-items:flex-start;gap:12px;}
     .hero-cta .btn-primary, .hero-cta .btn-secondary{width:100%;justify-content:center;}
     .hero-phone{font-size:14px;}
-    .hero-images{height:auto;margin-top:28px;position:relative;padding-bottom:0;}
-    .hero-img-main{
-      position:relative;
-      width:100%;
-      left:auto;right:auto;top:auto;
-      border-radius:16px;
-    }
+    .hero-images{margin-top:28px;}
     .hero-img-main img{height:280px;}
-    /* hide sub image completely on mobile */
-    .hero-img-sub{display:none;}
     .scroll-hint{margin-top:48px;font-size:11px;}
 
     /* ── Manifest ── */
@@ -1249,33 +1268,8 @@
     /* ── Process / Timeline ── */
     .process{padding:64px 0;}
     .process h2{font-size:clamp(26px,7.5vw,38px);margin-bottom:50px;}
-    .timeline{margin:0;}
-    .timeline::before{display:none;}
-    .t-row, .t-row.flip{
-      display:flex;
-      flex-direction:column;
-      align-items:flex-start;
-      padding-left:0;
-      margin-bottom:52px;
-      min-height:auto;
-      gap:0;
-      grid-template-columns:unset;
-    }
-    /* hide all dot markers on mobile */
-    .t-row .dot, .t-row.flip .dot{display:none;}
-    /* show both sides stacked, num first then text */
-    .t-row .t-side, .t-row.flip .t-side{
-      padding:0 !important;
-      text-align:left !important;
-      order:initial !important;
-      width:100%;
-    }
-    /* for flipped rows, bring num-side to top */
-    .t-row.flip .t-side.text-side{order:2 !important;}
-    .t-row.flip .t-side.num-side{order:1 !important;text-align:left !important;}
-    .t-row .t-num, .t-row.flip .t-num{font-size:68px;line-height:1;color:var(--terracotta-soft);margin-bottom:0;}
-    .t-row .t-side.text-side .rule{margin-left:0 !important;margin-bottom:12px;margin-top:8px;}
-    .t-row .t-side.text-side h4{font-size:24px;margin-bottom:8px;}
+    .t-row .t-num, .t-row.flip .t-num{font-size:68px;}
+    .t-row .t-side.text-side h4{font-size:24px;}
     .t-row .t-side.text-side p{font-size:15px;}
 
     /* ── Testimonials ── */
@@ -1576,7 +1570,7 @@
     <div class="ba-grid reveal">
       <!-- Before Card -->
       <div class="ba-card before">
-        <div class="ba-card-label">ДО</div>
+        <div class="ba-card-label" data-i18n="ba.before.label">ДО</div>
         <img src="images/photo_1_2026-07-01_23-41-48.jpg?v=2" alt="В процессе строительства" loading="eager">
         <div class="ba-card-text">
           <h3 data-i18n="ba.before.title">В процессе строительства</h3>
@@ -1592,7 +1586,7 @@
 
       <!-- After Card -->
       <div class="ba-card after">
-        <div class="ba-card-label">ПОСЛЕ</div>
+        <div class="ba-card-label" data-i18n="ba.after.label">ПОСЛЕ</div>
         <img src="images/photo_2_2026-07-01_23-41-48.jpg?v=2" alt="Завершённая резиденция" loading="eager">
         <div class="ba-card-text">
           <h3 data-i18n="ba.after.title">Завершённая резиденция</h3>
@@ -2056,7 +2050,7 @@ let galleryData = [];
       'svc7.title':'Фасады и облицовка камнем','svc7.text':'Фасады и облицовка стен в виде натурального камня. Моделируется на объекте — бесшовно, индивидуально, без видимых стыков и повторов.',
       'featured.eyebrow':'Избранная работа','featured.title':'Искусственные скалы — скальная лестница',
       'featured.text':'Проходимый скальный ландшафт с вручную смоделированной лестницей, изогнутыми перилами и карманами для растений. Четыре недели работы на объекте, слой за слоем.',
-      'ba.eyebrow':'Трансформация','ba.title':'Как было и как стало','ba.before.title':'В процессе строительства','ba.before.lead':'На этом этапе проект находился на начальной стадии — бетонная основа, простая конструкция с минимальной отделкой.','ba.before.f1':'Сырая бетонная конструкция','ba.before.f2':'Базовые окна и двери','ba.before.f3':'Простой дизайн кровель','ba.before.f4':'Минимальная обработка','ba.after.title':'Завершённая резиденция','ba.after.lead':'Невероятная трансформация: от сырого строительства к фантастическому дому со сказочной архитектурой, с художественными элементами и декорациями.','ba.after.f1':'Витиеватая архитектура','ba.after.f2':'Яркие художественные детали','ba.after.f3':'Освещение и скульптуры','ba.after.f4':'Ландшафтный дизайн','ba.after.f5':'Профессиональная отделка',
+      'ba.eyebrow':'Трансформация','ba.title':'Как было и как стало','ba.before.label':'До','ba.after.label':'После','ba.before.title':'В процессе строительства','ba.before.lead':'На этом этапе проект находился на начальной стадии — бетонная основа, простая конструкция с минимальной отделкой.','ba.before.f1':'Сырая бетонная конструкция','ba.before.f2':'Базовые окна и двери','ba.before.f3':'Простой дизайн кровель','ba.before.f4':'Минимальная обработка','ba.after.title':'Завершённая резиденция','ba.after.lead':'Невероятная трансформация: от сырого строительства к фантастическому дому со сказочной архитектурой, с художественными элементами и декорациями.','ba.after.f1':'Витиеватая архитектура','ba.after.f2':'Яркие художественные детали','ba.after.f3':'Освещение и скульптуры','ba.after.f4':'Ландшафтный дизайн','ba.after.f5':'Профессиональная отделка',
       'gallery.eyebrow':'Галерея','gallery.title':'Избранные работы','gallery.lead':'Подборка реализованных проектов. Нажмите на фото, чтобы увеличить.',
       'gallery.discuss':'Обсудить ваш проект',
       'filter.all':'Все','filter.скалы':'Скалы','filter.скульптуры':'Скульптуры','filter.павильоны':'Павильоны','filter.мебель':'Мебель','filter.печи':'Печи','filter.фонтаны':'Фонтаны','filter.фасады':'Фасады','filter.интерьер':'Интерьер','filter.мастерская':'Мастерская',
@@ -2111,7 +2105,7 @@ let galleryData = [];
       'svc7.title':'Fassaden und Steinverkleidung','svc7.text':'Fassaden und Wandverkleidungen im Naturstein-Look. Vor Ort modelliert — nahtlos, individuell, ohne sichtbare Fugen oder Wiederholungen.',
       'featured.eyebrow':'Ausgewählte Arbeit','featured.title':'Künstliche Felsen — Felsentreppe',
       'featured.text':'Begehbare Felslandschaft mit handmodellierter Treppe, geschwungenem Geländer und Pflanztaschen. Vier Wochen Arbeit vor Ort, Schicht für Schicht.',
-      'ba.eyebrow':'Transformation','ba.title':'Vorher und nachher','ba.before.title':'Im Bauprozess','ba.before.lead':'In diesem Stadium befand sich das Projekt in der Anfangsphase — Betonkonstruktion, einfaches Design mit minimaler Verarbeitung.','ba.before.f1':'Rohbetonkonstruktion','ba.before.f2':'Grundfenster und Türen','ba.before.f3':'Einfaches Dachdesign','ba.before.f4':'Minimale Bearbeitung','ba.after.title':'Vollendete Residenz','ba.after.lead':'Eine unglaubliche Transformation: von rohem Bauzustand zu einem fantastischen Haus mit märchenhafter Architektur, künstlerischen Elementen und Dekorationen.','ba.after.f1':'Detaillierte Architektur','ba.after.f2':'Künstlerische Details','ba.after.f3':'Beleuchtung und Skulpturen','ba.after.f4':'Landschaftsgestaltung','ba.after.f5':'Professionelle Verarbeitung',
+      'ba.eyebrow':'Transformation','ba.title':'Vorher und nachher','ba.before.label':'Vorher','ba.after.label':'Nachher','ba.before.title':'Im Bauprozess','ba.before.lead':'In diesem Stadium befand sich das Projekt in der Anfangsphase — Betonkonstruktion, einfaches Design mit minimaler Verarbeitung.','ba.before.f1':'Rohbetonkonstruktion','ba.before.f2':'Grundfenster und Türen','ba.before.f3':'Einfaches Dachdesign','ba.before.f4':'Minimale Bearbeitung','ba.after.title':'Vollendete Residenz','ba.after.lead':'Eine unglaubliche Transformation: von rohem Bauzustand zu einem fantastischen Haus mit märchenhafter Architektur, künstlerischen Elementen und Dekorationen.','ba.after.f1':'Detaillierte Architektur','ba.after.f2':'Künstlerische Details','ba.after.f3':'Beleuchtung und Skulpturen','ba.after.f4':'Landschaftsgestaltung','ba.after.f5':'Professionelle Verarbeitung',
       'gallery.eyebrow':'Galerie','gallery.title':'Ausgewählte Arbeiten','gallery.lead':'Eine Auswahl realisierter Projekte. Klicken Sie auf ein Foto, um es zu vergrößern.',
       'gallery.discuss':'Ihr Projekt besprechen',
       'filter.all':'Alle','filter.скалы':'Felsen','filter.скульптуры':'Skulpturen','filter.павильоны':'Pavillons','filter.мебель':'Möbel','filter.печи':'Öfen','filter.фонтаны':'Brunnen','filter.фасады':'Fassaden','filter.интерьер':'Interieur','filter.мастерская':'Atelier',
@@ -2166,7 +2160,7 @@ let galleryData = [];
       'svc7.title':'Facades and stone cladding','svc7.text':'Facades and wall cladding made to look like natural stone. Modeled on site — seamless, individual, with no visible joints or repeats.',
       'featured.eyebrow':'Featured work','featured.title':'Artificial rocks — rock staircase',
       'featured.text':'A walkable rock landscape with a hand-modeled staircase, curved railings and planting pockets. Four weeks of on-site work, layer by layer.',
-      'ba.eyebrow':'Transformation','ba.title':'Before and After','ba.before.title':'During Construction','ba.before.lead':'At this stage, the project was in the initial phase — concrete foundation, simple design with minimal finishing.','ba.before.f1':'Raw concrete structure','ba.before.f2':'Basic windows and doors','ba.before.f3':'Simple roof design','ba.before.f4':'Minimal finishing','ba.after.title':'Completed Residence','ba.after.lead':'An incredible transformation: from raw construction to a fantastic house with fairy-tale architecture, artistic elements and decorations.','ba.after.f1':'Intricate architecture','ba.after.f2':'Artistic details','ba.after.f3':'Lighting and sculptures','ba.after.f4':'Landscape design','ba.after.f5':'Professional finishing',
+      'ba.eyebrow':'Transformation','ba.title':'Before and After','ba.before.label':'Before','ba.after.label':'After','ba.before.title':'During Construction','ba.before.lead':'At this stage, the project was in the initial phase — concrete foundation, simple design with minimal finishing.','ba.before.f1':'Raw concrete structure','ba.before.f2':'Basic windows and doors','ba.before.f3':'Simple roof design','ba.before.f4':'Minimal finishing','ba.after.title':'Completed Residence','ba.after.lead':'An incredible transformation: from raw construction to a fantastic house with fairy-tale architecture, artistic elements and decorations.','ba.after.f1':'Intricate architecture','ba.after.f2':'Artistic details','ba.after.f3':'Lighting and sculptures','ba.after.f4':'Landscape design','ba.after.f5':'Professional finishing',
       'gallery.eyebrow':'Gallery','gallery.title':'Selected works','gallery.lead':'A selection of completed projects. Click a photo to enlarge.',
       'gallery.discuss':'Discuss your project',
       'filter.all':'All','filter.скалы':'Rocks','filter.скульптуры':'Sculptures','filter.павильоны':'Pavilions','filter.мебель':'Furniture','filter.печи':'Ovens','filter.фонтаны':'Fountains','filter.фасады':'Facades','filter.интерьер':'Interior','filter.мастерская':'Workshop',
