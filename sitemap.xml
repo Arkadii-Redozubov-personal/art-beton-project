@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
 <url>
-<loc>https://art-concrete.netlify.app/</loc>
-<lastmod>2026-07-03</lastmod>
-<changefreq>weekly</changefreq>
-<priority>1.0</priority>
+  <loc>https://art-concrete.netlify.app/</loc>
+  <lastmod>2026-07-20</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+    <image:loc>https://art-concrete.netlify.app/images/photo_1_2026-07-01_23-41-48.jpg</image:loc>
+    <image:title>Мастерская арт-бетона Олег Симахин — Wurzel &amp; Stein</image:title>
+    <image:caption>Искусственные скалы и ландшафты из арт-бетона. Ручная работа мастера Олега Симахина</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://art-concrete.netlify.app/images/WhatsApp%20Image%202026-06-25%20at%2010.07.06%20(1).jpeg</image:loc>
+    <image:title>Искусственная скала — арт-бетон Олег Симахин</image:title>
+    <image:caption>Искусственная скала ручной работы. Мастерская арт-бетона Wurzel &amp; Stein, Northeim, Германия</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://art-concrete.netlify.app/images/WhatsApp%20Image%202026-06-25%20at%2010.07.09%20(2).jpeg</image:loc>
+    <image:title>Скульптура из арт-бетона — Oleg Simakhin</image:title>
+    <image:caption>Садовая скульптура из бетона ручной работы. Мастер Олег Симахин</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://art-concrete.netlify.app/images/WhatsApp%20Image%202026-06-30%20at%2013.33.33.jpeg</image:loc>
+    <image:title>Павильон из арт-бетона под дерево</image:title>
+    <image:caption>Павильон из бетона, имитирующий дерево. Мастерская Wurzel &amp; Stein</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://art-concrete.netlify.app/images/WhatsApp%20Image%202026-06-30%20at%2013.33.34.jpeg</image:loc>
+    <image:title>Фасад из арт-бетона под камень</image:title>
+    <image:caption>Облицовка фасада под натуральный камень. Арт-бетон Олег Симахин</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://art-concrete.netlify.app/images/photo_2_2026-07-01_23-41-48.jpg</image:loc>
+    <image:title>Завершённый проект арт-бетона — Wurzel &amp; Stein</image:title>
+    <image:caption>Завершённая резиденция с художественным оформлением из бетона</image:caption>
+  </image:image>
 </url>
 
 </urlset>
