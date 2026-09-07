@@ -1,129 +1,130 @@
-{
+﻿{
   "items": [
     {
       "cat": "скалы",
       "tag": "Скалы",
-      "src": "images/WhatsApp Image 2026-06-25 at 10.07.06.webp"
+      "src": "/images/WhatsApp Image 2026-06-25 at 10.07.06.webp"
     },
     {
       "cat": "скульптуры",
       "tag": "Скульптуры",
-      "src": "images/WhatsApp Image 2026-06-30 at 13.33.36 (5).webp"
+      "src": "/images/WhatsApp Image 2026-06-30 at 13.33.36 (5).webp"
     },
     {
       "cat": "фонтаны",
       "tag": "Фонтаны",
-      "src": "images/WhatsApp Image 2026-06-25 at 10.07.08 (10).webp"
+      "src": "/images/WhatsApp Image 2026-06-25 at 10.07.08 (10).webp"
     },
     {
       "cat": "мебель",
       "tag": "Мебель",
-      "src": "images/WhatsApp Image 2026-06-25 at 10.07.08 (9).webp"
+      "src": "/images/WhatsApp Image 2026-06-25 at 10.07.08 (9).webp"
     },
     {
       "cat": "скульптуры",
       "tag": "Скульптуры",
-      "src": "images/WhatsApp Image 2026-06-25 at 10.07.08.webp"
+      "src": "/images/WhatsApp Image 2026-06-25 at 10.07.08.webp"
     },
     {
       "cat": "скалы",
       "tag": "Скалы",
-      "src": "images/WhatsApp Image 2026-06-30 at 13.33.33 (3).webp"
+      "src": "/images/WhatsApp Image 2026-06-30 at 13.33.33 (3).webp"
     },
     {
       "cat": "фасады",
       "tag": "Фасады",
-      "src": "images/WhatsApp Image 2026-06-25 at 10.07.08 (1).webp"
+      "src": "/images/WhatsApp Image 2026-06-25 at 10.07.08 (1).webp"
     },
     {
       "cat": "интерьер",
       "tag": "Интерьер",
-      "src": "images/WhatsApp Image 2026-06-30 at 13.33.32.webp"
+      "src": "/images/WhatsApp Image 2026-06-30 at 13.33.32.webp"
     },
     {
       "cat": "интерьер",
       "tag": "Интерьер",
-      "src": "images/WhatsApp Image 2026-06-30 at 13.33.33 (1).webp"
+      "src": "/images/WhatsApp Image 2026-06-30 at 13.33.33 (1).webp"
     },
     {
       "cat": "скульптуры",
       "tag": "Скульптуры",
-      "src": "images/WhatsApp Image 2026-06-30 at 13.33.35 (3).webp"
+      "src": "/images/WhatsApp Image 2026-06-30 at 13.33.35 (3).webp"
     },
     {
       "cat": "интерьер",
       "tag": "Интерьер",
-      "src": "images/WhatsApp Image 2026-06-30 at 13.33.35.webp"
+      "src": "/images/WhatsApp Image 2026-06-30 at 13.33.35.webp"
     },
     {
       "cat": "павильоны",
       "tag": "Павильоны",
-      "src": "images/WhatsApp Image 2026-06-30 at 13.33.37 (3).webp"
+      "src": "/images/WhatsApp Image 2026-06-30 at 13.33.37 (3).webp"
     },
     {
       "cat": "скульптуры",
       "tag": "Скульптуры",
-      "src": "images/WhatsApp Image 2026-06-30 at 13.33.36 (6).webp"
+      "src": "/images/WhatsApp Image 2026-06-30 at 13.33.36 (6).webp"
     },
     {
       "cat": "мебель",
       "tag": "Мебель",
-      "src": "images/WhatsApp Image 2026-06-25 at 10.07.08 (8).webp"
+      "src": "/images/WhatsApp Image 2026-06-25 at 10.07.08 (8).webp"
     },
     {
       "cat": "скульптуры",
       "tag": "Скульптуры",
-      "src": "images/WhatsApp Image 2026-06-30 at 13.33.37 (7).webp"
+      "src": "/images/WhatsApp Image 2026-06-30 at 13.33.37 (7).webp"
     },
     {
       "cat": "павильоны",
       "tag": "Павильоны",
-      "src": "images/WhatsApp Image 2026-06-30 at 13.33.37 (4).webp"
+      "src": "/images/WhatsApp Image 2026-06-30 at 13.33.37 (4).webp"
     },
     {
       "cat": "скульптуры",
       "tag": "Скульптуры",
-      "src": "images/WhatsApp Image 2026-06-30 at 13.33.35 (2).webp"
+      "src": "/images/WhatsApp Image 2026-06-30 at 13.33.35 (2).webp"
     },
     {
       "cat": "скульптуры",
       "tag": "Скульптуры",
-      "src": "images/WhatsApp Image 2026-06-30 at 13.33.35 (1).webp"
+      "src": "/images/WhatsApp Image 2026-06-30 at 13.33.35 (1).webp"
     },
     {
       "cat": "павильоны",
       "tag": "Павильоны",
-      "src": "images/WhatsApp Image 2026-06-25 at 10.07.08 (5).webp"
+      "src": "/images/WhatsApp Image 2026-06-25 at 10.07.08 (5).webp"
     },
     {
       "cat": "скалы",
       "tag": "Скалы",
-      "src": "images/WhatsApp Image 2026-06-25 at 10.07.07.webp"
+      "src": "/images/WhatsApp Image 2026-06-25 at 10.07.07.webp"
     },
     {
       "cat": "фасады",
       "tag": "Фасады",
-      "src": "images/WhatsApp Image 2026-06-30 at 13.33.37 (1).webp"
+      "src": "/images/WhatsApp Image 2026-06-30 at 13.33.37 (1).webp"
     },
     {
       "cat": "павильоны",
       "tag": "Павильоны",
-      "src": "images/WhatsApp Image 2026-06-25 at 10.07.09 (2).webp"
+      "src": "/images/WhatsApp Image 2026-06-25 at 10.07.09 (2).webp"
     },
     {
       "cat": "скульптуры",
       "tag": "Скульптуры",
-      "src": "images/WhatsApp Image 2026-06-30 at 13.33.37 (6).webp"
+      "src": "/images/WhatsApp Image 2026-06-30 at 13.33.37 (6).webp"
     },
     {
       "cat": "фасады",
       "tag": "Фасады",
-      "src": "images/WhatsApp Image 2026-06-30 at 13.33.38 (1).webp"
+      "src": "/images/WhatsApp Image 2026-06-30 at 13.33.38 (1).webp"
     },
     {
       "cat": "скульптуры",
       "tag": "Скульптуры",
-      "src": "images/WhatsApp Image 2026-06-30 at 13.33.38.webp"
+      "src": "/images/WhatsApp Image 2026-06-30 at 13.33.38.webp"
     }
   ]
 }
+

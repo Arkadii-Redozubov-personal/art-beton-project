@@ -29,7 +29,7 @@ site_url: https://art-concrete.netlify.app
 
 # Изображения при загрузке кладутся в /images, ссылки в JSON — вида "images/файл.jpg"
 media_folder: "images"
-public_folder: "images"
+public_folder: "/images"
 
 collections:
   - name: "gallery"
