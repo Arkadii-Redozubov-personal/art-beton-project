@@ -39,4 +39,16 @@
   </image:image>
 </url>
 
+<url>
+  <loc>https://art-concrete.netlify.app/ru/</loc>
+  <changefreq>weekly</changefreq>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://art-concrete.netlify.app/en/</loc>
+  <changefreq>weekly</changefreq>
+  <priority>1.0</priority>
+</url>
+
 </urlset>
